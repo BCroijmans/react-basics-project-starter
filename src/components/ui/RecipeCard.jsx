@@ -10,10 +10,15 @@ import {
   Center,
 } from "@chakra-ui/react";
 
-export const RecipeCard = ({ recipe }) => {
+export const RecipeCard = ({ recipe, clickFn }) => {
   return (
     <>
-      <Card bg="white" borderRadius="2rem" alignItems="center">
+      <Card
+        bg="white"
+        borderRadius="2rem"
+        alignItems="center"
+        onClick={() => clickFn(recipe)}
+      >
         <CardBody>
           <Stack>
             <Box>
@@ -23,7 +28,7 @@ export const RecipeCard = ({ recipe }) => {
                 objectFit="cover"
                 borderRadius="2rem"
                 h="150px"
-                w="250px"
+                w="350px"
               ></Image>
             </Box>
             <Box>
@@ -67,7 +72,7 @@ export const RecipeCard = ({ recipe }) => {
                 <Heading fontSize="sm">Cautions :</Heading>
               </Center>
               <Center>
-                <Text> {recipe.cautions.join(",")}</Text>
+                <Text textAlign="center"> {recipe.cautions.join(",")}</Text>
               </Center>
             </Box>
           </Stack>

@@ -4,14 +4,14 @@ export const TextInput = ({ changeFn, ...props }) => {
   return (
     <Input
       variant={"filled"}
-      focusBorderColor="blue.400"
+      focusBorderColor="black"
       _focus={{ background: "white" }}
       fontSize={"sm"}
       color="blue.400"
       fontStyle={"italic"}
-      placeholder="Please, put your search right here"
+      placeholder=" Find youre recipe!"
       _placeholder={{ color: "gray.400" }}
-      _hover={{ background: "#dbecc9" }}
+      _hover={{ background: "white" }}
       onChange={changeFn}
       {...props}
     ></Input>

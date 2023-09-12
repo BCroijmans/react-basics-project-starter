@@ -10,6 +10,20 @@ import {
   Center,
 } from "@chakra-ui/react";
 
+const Label = ({ children, color }) => (
+  <Center>
+    <Text
+      textAlign="center"
+      fontSize="md"
+      w="20"
+      borderRadius="20%"
+      bgColor={color}
+    >
+      {children}
+    </Text>
+  </Center>
+);
+
 export const RecipeCard = ({ recipe, clickFn }) => {
   return (
     <>
@@ -20,7 +34,7 @@ export const RecipeCard = ({ recipe, clickFn }) => {
         onClick={() => clickFn(recipe)}
       >
         <CardBody>
-          <Stack>
+          <Stack spacing={1}>
             <Box>
               <Image
                 src={recipe.image}
@@ -28,7 +42,7 @@ export const RecipeCard = ({ recipe, clickFn }) => {
                 objectFit="cover"
                 borderRadius="2rem"
                 h="150px"
-                w="350px"
+                w={["100%", "300px"]}
               ></Image>
             </Box>
             <Box>
@@ -38,7 +52,7 @@ export const RecipeCard = ({ recipe, clickFn }) => {
             </Box>
             <CardHeader>
               <Center>
-                <Heading textAlign="center" size="sm">
+                <Heading mt="-6" textAlign="center" size="sm">
                   {recipe.label}
                 </Heading>
               </Center>
@@ -46,18 +60,41 @@ export const RecipeCard = ({ recipe, clickFn }) => {
             <Box>
               {recipe.healthLabels.includes("Vegan") && (
                 <Center>
-                  <Text fontSize="md">Vegan</Text>
+                  <Text
+                    mt="-5"
+                    textAlign="center"
+                    fontSize="md"
+                    w="20"
+                    borderRadius="20%"
+                    bgColor="green.400"
+                  >
+                    Vegan
+                  </Text>
                 </Center>
               )}
               {recipe.healthLabels.includes("Vegetarian") && (
-                <Center>
-                  <Text fontSize="md">Vegetarian</Text>
+                <Center pt="1">
+                  <Text
+                    textAlign="center"
+                    fontSize="md"
+                    w="20"
+                    borderRadius="20%"
+                    bgColor="green.600"
+                  >
+                    Vegetarian
+                  </Text>
                 </Center>
               )}
             </Box>
             <Box>
               <Center>
-                <Text pt="2" fontSize="sm">
+                <Text
+                  textAlign="center"
+                  fontSize="md"
+                  w="20"
+                  borderRadius="20%"
+                  bgColor="green.200"
+                >
                   {recipe.dietLabels.join(", ")}
                 </Text>
               </Center>
@@ -67,14 +104,18 @@ export const RecipeCard = ({ recipe, clickFn }) => {
                 <Text fontSize="md">Dish: {recipe.dishType.join(",")}</Text>
               </Center>
             </Box>
-            <Box>
-              <Center>
-                <Heading fontSize="sm">Cautions :</Heading>
-              </Center>
-              <Center>
-                <Text textAlign="center"> {recipe.cautions.join(",")}</Text>
-              </Center>
-            </Box>
+            {recipe.cautions.length > 0 && (
+              <Box>
+                <Center>
+                  <Heading fontSize="sm">Cautions :</Heading>
+                </Center>
+                {recipe.cautions.map((caution, allergy) => (
+                  <Label key={allergy} color="red.400">
+                    {caution}
+                  </Label>
+                ))}
+              </Box>
+            )}
           </Stack>
         </CardBody>
       </Card>

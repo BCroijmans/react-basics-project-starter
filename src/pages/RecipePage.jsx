@@ -107,11 +107,11 @@ export const RecipePage = ({ recipe, clickFn }) => {
                 Total nutrients:
               </Text>
               <Stack direction={["column", "row"]} gap={[1, 5]}>
-                {Nutrients.map((nutri) => {
+                {Nutrients.map((nut) => {
                   return (
                     <Stack
                       direction="column"
-                      key={nutri.label}
+                      key={nut.label}
                       p={1}
                       fontSize={["xs", "sm"]}
                       textAlign={"center"}
@@ -121,10 +121,10 @@ export const RecipePage = ({ recipe, clickFn }) => {
                         textTransform={"uppercase"}
                         fontSize={"xs"}
                       >
-                        {nutri.label}
+                        {nut.label}
                       </Text>
                       <Text mb={-2}>
-                        {Math.round(nutri.quantity)} {nutri.unit}
+                        {Math.round(nut.quantity)} {nut.unit}
                       </Text>
                     </Stack>
                   );

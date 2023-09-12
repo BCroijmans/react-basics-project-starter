@@ -8,6 +8,7 @@ import {
   Image,
   CardHeader,
   Center,
+  Divider,
 } from "@chakra-ui/react";
 
 const Label = ({ children, color }) => (
@@ -35,16 +36,20 @@ export const RecipeCard = ({ recipe, clickFn }) => {
       >
         <CardBody>
           <Stack spacing={1}>
-            <Box>
+            <Box mb="150px" h="20%" overflow="hidden">
               <Image
                 src={recipe.image}
                 alt={recipe.label}
                 objectFit="cover"
                 borderRadius="2rem"
+                position="absolute"
+                top="0"
+                left="0"
                 h="150px"
-                w={["100%", "300px"]}
+                w="100%"
               ></Image>
             </Box>
+
             <Box>
               <Center>
                 <Text>{recipe.mealType.join(",")}</Text>
@@ -66,7 +71,7 @@ export const RecipeCard = ({ recipe, clickFn }) => {
                     fontSize="md"
                     w="20"
                     borderRadius="20%"
-                    bgColor="green.400"
+                    bgColor="purple.200"
                   >
                     Vegan
                   </Text>
@@ -79,13 +84,14 @@ export const RecipeCard = ({ recipe, clickFn }) => {
                     fontSize="md"
                     w="20"
                     borderRadius="20%"
-                    bgColor="green.600"
+                    bgColor="purple.200"
                   >
                     Vegetarian
                   </Text>
                 </Center>
               )}
             </Box>
+
             <Box>
               <Center>
                 <Text
@@ -99,6 +105,7 @@ export const RecipeCard = ({ recipe, clickFn }) => {
                 </Text>
               </Center>
             </Box>
+
             <Box>
               <Center>
                 <Text fontSize="md">Dish: {recipe.dishType.join(",")}</Text>

@@ -37,7 +37,7 @@ export const RecipeListPage = ({ clickFn }) => {
       </Box>
       <SimpleGrid
         bg="blue.300"
-        columns={{ base: 1, md: 2, lg: 5 }}
+        columns={{ base: 1, md: 2, lg: 4 }}
         spacing={10}
       >
         {matchedRecipes.map((recipe) => (

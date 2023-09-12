@@ -8,7 +8,6 @@ import {
   Image,
   CardHeader,
   Center,
-  Divider,
 } from "@chakra-ui/react";
 
 const Label = ({ children, color }) => (
@@ -29,6 +28,7 @@ export const RecipeCard = ({ recipe, clickFn }) => {
   return (
     <>
       <Card
+        m="50px"
         bg="white"
         borderRadius="2rem"
         alignItems="center"
@@ -42,6 +42,7 @@ export const RecipeCard = ({ recipe, clickFn }) => {
                 alt={recipe.label}
                 objectFit="cover"
                 borderRadius="2rem"
+                borderBottomRadius="0%"
                 position="absolute"
                 top="0"
                 left="0"

@@ -23,7 +23,7 @@ export const RecipeListPage = ({ clickFn }) => {
         alignItems="center"
         justifyContent="center"
         bgColor="blue.300"
-        pb="10"
+        pb="1"
       >
         <Heading>
           <Text
@@ -39,6 +39,8 @@ export const RecipeListPage = ({ clickFn }) => {
         bg="blue.300"
         columns={{ base: 1, md: 2, lg: 4 }}
         spacing={10}
+        maxWidth="90%"
+        marginX="auto"
       >
         {matchedRecipes.map((recipe) => (
           <RecipeCard

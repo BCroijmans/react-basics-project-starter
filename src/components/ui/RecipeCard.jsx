@@ -28,11 +28,12 @@ export const RecipeCard = ({ recipe, clickFn }) => {
   return (
     <>
       <Card
-        m="50px"
         bg="white"
         borderRadius="2rem"
         alignItems="center"
         onClick={() => clickFn(recipe)}
+        maxWidth="300px"
+        mt="2rem"
       >
         <CardBody>
           <Stack spacing={1}>

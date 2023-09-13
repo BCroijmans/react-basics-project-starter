@@ -12,9 +12,19 @@ export const RecipeListPage = ({ clickFn }) => {
   };
 
   const matchedRecipes = data.hits.filter((recipe) => {
-    return recipe.recipe.label
-      .toLowerCase()
-      .includes(searchField.toLowerCase());
+    const searchString = searchField.toLowerCase();
+    return (
+      recipe.recipe.label.toLowerCase().includes(searchString) ||
+      recipe.recipe.healthLabels.some((label) =>
+        label.toLowerCase().includes(searchString)
+      ) ||
+      recipe.recipe.dietLabels.some((label) =>
+        label.toLowerCase().includes(searchString)
+      ) ||
+      recipe.recipe.cautions.some((caution) =>
+        caution.toLowerCase().includes(searchString)
+      )
+    );
   });
   return (
     <>

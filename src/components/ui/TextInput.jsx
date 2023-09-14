@@ -9,7 +9,7 @@ export const TextInput = ({ changeFn, ...props }) => {
       fontSize={"sm"}
       color="blue.400"
       fontStyle={"italic"}
-      placeholder=" Find youre recipe!"
+      placeholder="Search Recipe Names Healthlabels Dietlabels Cautions Vegan Vegatarian"
       _placeholder={{ color: "gray.400" }}
       _hover={{ background: "white" }}
       onChange={changeFn}

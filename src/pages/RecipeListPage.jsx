@@ -10,7 +10,7 @@ export const RecipeListPage = ({ clickFn }) => {
   const handleChange = (event) => {
     setSearchField(event.target.value);
   };
-
+  // ik dacht doe wat meer dan gevraagd is je kunt op alle termen en labels zoeken.
   const matchedRecipes = data.hits.filter((recipe) => {
     const searchString = searchField.toLowerCase();
     return (
@@ -33,7 +33,6 @@ export const RecipeListPage = ({ clickFn }) => {
         alignItems="center"
         justifyContent="center"
         bgColor="blue.300"
-        pb="1"
       >
         <Heading>
           <Text

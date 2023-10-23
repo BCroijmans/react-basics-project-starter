@@ -3,6 +3,8 @@ import { Input } from "@chakra-ui/react";
 export const TextInput = ({ changeFn, ...props }) => {
   return (
     <Input
+      id="search"
+      name="search"
       variant={"filled"}
       focusBorderColor="black"
       _focus={{ background: "white" }}

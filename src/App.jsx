@@ -6,7 +6,7 @@ import { Box } from "@chakra-ui/react";
 export const App = () => {
   const [chosenRecipe, SetChosenRecipe] = useState();
   return (
-    <Box bg="yellow.300" w="100%" h="100%">
+    <Box bg="blue.300" w="100%" h="100%">
       {chosenRecipe ? (
         <RecipePage recipe={chosenRecipe} clickFn={SetChosenRecipe} />
       ) : (
